@@ -1,4 +1,5 @@
-# dbt-Snowflake project
+# dbt-Snowflake Project 
+
 
 # Introduction
 This project is a comprehensive data engineering pipeline focused on analyzing Airbnb data to derive meaningful insights about listings, hosts, and user reviews. The primary objective is to build a robust and scalable data infrastructure that can ingest raw data, perform transformations, and facilitate advanced analytics and reporting.
@@ -15,10 +16,14 @@ This project is a comprehensive data engineering pipeline focused on analyzing A
 
 
 # Data Flow Overview
+![dbt-dag](https://github.com/user-attachments/assets/be7b83bd-bfdf-499b-84f8-98baba1e4765)
 
 
 
 # Technologies and Techniques Applied
+<img src="https://raw.githubusercontent.com/dbt-labs/dbt-core/fa1ea14ddfb1d5ae319d5141844910dd53ab2834/etc/dbt-core.svg" alt="dbt logo" width="100"/> <img src="https://github.com/user-attachments/assets/1c68bb54-ead2-4545-b91b-4cc9682ede29" alt="dbt logo" width="50"/>
+
+
 - **Snowflake**: Utilized for its powerful cloud-based data warehousing capabilities, allowing for scalable storage and rapid querying.
 - **dbt**: Used for data transformation and modeling. dbt enables modular SQL development with Jinja templating, facilitating reusable and maintainable code.
 - **Dagster**: A data orchestrator that schedules and monitors the data pipelines, ensuring reliable and repeatable data workflows.
