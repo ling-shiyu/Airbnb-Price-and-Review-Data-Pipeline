@@ -1,0 +1,541 @@
+[0m15:57:04.872937 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9458e824f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f945a79edf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f945a79e4f0>]}
+
+
+============================== 15:57:04.878840 | 2910e860-8fd8-4622-8446-0103f819ccdc ==============================
+[0m15:57:04.878840 [info ] [MainThread]: Running with dbt=1.8.6
+[0m15:57:04.879475 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/lingshiyu/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init dbtlearn', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:57:04.895531 [debug] [MainThread]: Starter project path: /Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m15:57:04.901953 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:57:04.902347 [info ] [MainThread]: Setting up your profile.
+[0m15:57:45.676767 [error] [MainThread]: Encountered an error:
+numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[0m15:57:45.685534 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 263, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 173, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/connections.py", line 19, in <module>
+    import snowflake.connector
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/__init__.py", line 19, in <module>
+    from .connection import SnowflakeConnection
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/connection.py", line 35, in <module>
+    from . import errors, proxy
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/errors.py", line 15, in <module>
+    from .compat import BASE_EXCEPTION_CLASS
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/compat.py", line 19, in <module>
+    from . import constants
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/constants.py", line 12, in <module>
+    from .options import pyarrow as pa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 135, in <module>
+    pandas, pyarrow, installed_pandas = _import_or_missing_pandas_option()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 77, in _import_or_missing_pandas_option
+    pandas = importlib.import_module("pandas")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/__init__.py", line 15, in <module>
+    from pandas.compat.numpy import (
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/__init__.py", line 1, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+
+[0m15:57:45.845073 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 41.237488, "process_user_time": 2.806044, "process_kernel_time": 0.387218, "process_mem_max_rss": "91283456", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:57:45.845959 [debug] [MainThread]: Command `dbt init` failed at 15:57:45.845740 after 41.24 seconds
+[0m15:57:45.846499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9458e824f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f945ac7b2e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f945a785100>]}
+[0m15:57:45.846914 [debug] [MainThread]: Flushing usage events
+[0m15:58:42.631670 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd989289490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd97884ed00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd97884e400>]}
+
+
+============================== 15:58:42.636402 | 302a422b-b675-4709-8684-ce4b72a4a67a ==============================
+[0m15:58:42.636402 [info ] [MainThread]: Running with dbt=1.8.6
+[0m15:58:42.636945 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/lingshiyu/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init dbtlearn', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:58:42.647989 [info ] [MainThread]: A project called dbtlearn already exists here.
+[0m15:58:42.650361 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.08924133, "process_user_time": 0.884625, "process_kernel_time": 0.132296, "process_mem_max_rss": "93044736", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:58:42.651115 [debug] [MainThread]: Command `dbt init` succeeded at 15:58:42.650892 after 0.09 seconds
+[0m15:58:42.651483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd989289490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd96830fb20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd98a95a850>]}
+[0m15:58:42.651799 [debug] [MainThread]: Flushing usage events
+[0m16:00:55.440322 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7082d24c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc728166d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc728166430>]}
+
+
+============================== 16:00:55.444916 | 16a1a515-1e14-4105-86d7-dcd423fc7008 ==============================
+[0m16:00:55.444916 [info ] [MainThread]: Running with dbt=1.8.6
+[0m16:00:55.445482 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '/Users/lingshiyu/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init dbtlearn', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:00:55.457093 [info ] [MainThread]: A project called dbtlearn already exists here.
+[0m16:00:55.459782 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.08476783, "process_user_time": 0.875533, "process_kernel_time": 0.13462, "process_mem_max_rss": "93454336", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:00:55.460690 [debug] [MainThread]: Command `dbt init` succeeded at 16:00:55.460430 after 0.09 seconds
+[0m16:00:55.461115 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7082d24c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc71aca7310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7281bcf70>]}
+[0m16:00:55.461454 [debug] [MainThread]: Flushing usage events
+[0m16:07:03.772949 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb4122a4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb3039ed30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb3039e430>]}
+
+
+============================== 16:07:03.777605 | 22e97bbf-f934-4ab0-814d-a2218392b5e8 ==============================
+[0m16:07:03.777605 [info ] [MainThread]: Running with dbt=1.8.6
+[0m16:07:03.778169 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/Users/lingshiyu/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init dbtlea', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:07:03.789777 [debug] [MainThread]: Starter project path: /Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m16:07:03.795039 [info ] [MainThread]: 
+Your new dbt project "dbtlea" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:07:03.795395 [info ] [MainThread]: Setting up your profile.
+[0m16:07:06.040746 [error] [MainThread]: Encountered an error:
+numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[0m16:07:06.050458 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 263, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 173, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/connections.py", line 19, in <module>
+    import snowflake.connector
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/__init__.py", line 19, in <module>
+    from .connection import SnowflakeConnection
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/connection.py", line 35, in <module>
+    from . import errors, proxy
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/errors.py", line 15, in <module>
+    from .compat import BASE_EXCEPTION_CLASS
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/compat.py", line 19, in <module>
+    from . import constants
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/constants.py", line 12, in <module>
+    from .options import pyarrow as pa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 135, in <module>
+    pandas, pyarrow, installed_pandas = _import_or_missing_pandas_option()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 77, in _import_or_missing_pandas_option
+    pandas = importlib.import_module("pandas")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/__init__.py", line 15, in <module>
+    from pandas.compat.numpy import (
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/__init__.py", line 1, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+
+[0m16:07:06.055503 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 2.3544009, "process_user_time": 2.197496, "process_kernel_time": 0.482218, "process_mem_max_rss": "108490752", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:07:06.057129 [debug] [MainThread]: Command `dbt init` failed at 16:07:06.056675 after 2.36 seconds
+[0m16:07:06.057986 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb4122a4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb42cf32b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb303972b0>]}
+[0m16:07:06.058881 [debug] [MainThread]: Flushing usage events
+[0m16:11:53.139741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8fb135a4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8fa019ed30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8fa019e430>]}
+
+
+============================== 16:11:53.144398 | 0c3de099-88db-4b66-8ab4-a9e2e9234b1d ==============================
+[0m16:11:53.144398 [info ] [MainThread]: Running with dbt=1.8.6
+[0m16:11:53.144941 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/lingshiyu/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt init dbtlearn', 'send_anonymous_usage_stats': 'True'}
+[0m16:11:53.156308 [debug] [MainThread]: Starter project path: /Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m16:11:53.162087 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:11:53.162483 [info ] [MainThread]: Setting up your profile.
+[0m16:11:55.490988 [error] [MainThread]: Encountered an error:
+numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[0m16:11:55.540965 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 263, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 173, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/connections.py", line 19, in <module>
+    import snowflake.connector
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/__init__.py", line 19, in <module>
+    from .connection import SnowflakeConnection
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/connection.py", line 35, in <module>
+    from . import errors, proxy
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/errors.py", line 15, in <module>
+    from .compat import BASE_EXCEPTION_CLASS
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/compat.py", line 19, in <module>
+    from . import constants
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/constants.py", line 12, in <module>
+    from .options import pyarrow as pa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 135, in <module>
+    pandas, pyarrow, installed_pandas = _import_or_missing_pandas_option()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 77, in _import_or_missing_pandas_option
+    pandas = importlib.import_module("pandas")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/__init__.py", line 15, in <module>
+    from pandas.compat.numpy import (
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/__init__.py", line 1, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+
+[0m16:11:55.545527 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 2.479966, "process_user_time": 2.472183, "process_kernel_time": 0.488646, "process_mem_max_rss": "104259584", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:11:55.547192 [debug] [MainThread]: Command `dbt init` failed at 16:11:55.546794 after 2.48 seconds
+[0m16:11:55.547717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8fb135a4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8fb31832b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8fa01972b0>]}
+[0m16:11:55.548249 [debug] [MainThread]: Flushing usage events
+[0m16:18:40.601396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa980c624c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa990efedf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa990efe4f0>]}
+
+
+============================== 16:18:40.605964 | 7d085153-fa72-4718-bc3d-e1a279f1df1e ==============================
+[0m16:18:40.605964 [info ] [MainThread]: Running with dbt=1.8.6
+[0m16:18:40.606452 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '/Users/lingshiyu/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt init dbtlearn', 'send_anonymous_usage_stats': 'True'}
+[0m16:18:40.618544 [debug] [MainThread]: Starter project path: /Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m16:18:40.623680 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:18:40.624003 [info ] [MainThread]: Setting up your profile.
+[0m16:18:43.131482 [error] [MainThread]: Encountered an error:
+numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[0m16:18:43.144619 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 263, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 173, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/connections.py", line 19, in <module>
+    import snowflake.connector
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/__init__.py", line 19, in <module>
+    from .connection import SnowflakeConnection
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/connection.py", line 35, in <module>
+    from . import errors, proxy
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/errors.py", line 15, in <module>
+    from .compat import BASE_EXCEPTION_CLASS
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/compat.py", line 19, in <module>
+    from . import constants
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/constants.py", line 12, in <module>
+    from .options import pyarrow as pa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 135, in <module>
+    pandas, pyarrow, installed_pandas = _import_or_missing_pandas_option()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 77, in _import_or_missing_pandas_option
+    pandas = importlib.import_module("pandas")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/__init__.py", line 15, in <module>
+    from pandas.compat.numpy import (
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/__init__.py", line 1, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+
+[0m16:18:43.152905 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 2.6275988, "process_user_time": 2.347744, "process_kernel_time": 0.482232, "process_mem_max_rss": "108834816", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:18:43.154495 [debug] [MainThread]: Command `dbt init` failed at 16:18:43.154142 after 2.63 seconds
+[0m16:18:43.154899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa980c624c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9913cb280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa990efc400>]}
+[0m16:18:43.155244 [debug] [MainThread]: Flushing usage events
+[0m16:21:33.186216 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbff8aba580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfe9736d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfe9736460>]}
+
+
+============================== 16:21:33.191252 | ab0ac226-e13b-408f-9953-3aed5e19828c ==============================
+[0m16:21:33.191252 [info ] [MainThread]: Running with dbt=1.8.6
+[0m16:21:33.191769 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/Users/lingshiyu/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt init dbtlearn', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:21:33.202935 [debug] [MainThread]: Starter project path: /Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m16:21:33.208773 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:21:33.209171 [info ] [MainThread]: Setting up your profile.
+[0m16:21:47.897963 [error] [MainThread]: Encountered an error:
+numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+[0m16:21:47.907389 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 263, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/task/init.py", line 173, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/__init__.py", line 2, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager  # noqa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/adapters/snowflake/connections.py", line 19, in <module>
+    import snowflake.connector
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/__init__.py", line 19, in <module>
+    from .connection import SnowflakeConnection
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/connection.py", line 35, in <module>
+    from . import errors, proxy
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/errors.py", line 15, in <module>
+    from .compat import BASE_EXCEPTION_CLASS
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/compat.py", line 19, in <module>
+    from . import constants
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/constants.py", line 12, in <module>
+    from .options import pyarrow as pa
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 135, in <module>
+    pandas, pyarrow, installed_pandas = _import_or_missing_pandas_option()
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/snowflake/connector/options.py", line 77, in _import_or_missing_pandas_option
+    pandas = importlib.import_module("pandas")
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/__init__.py", line 15, in <module>
+    from pandas.compat.numpy import (
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
+    from pandas.util.version import Version
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/__init__.py", line 1, in <module>
+    from pandas.util._decorators import (  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/util/_decorators.py", line 14, in <module>
+    from pandas._libs.properties import cache_readonly  # noqa:F401
+  File "/Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/__init__.py", line 13, in <module>
+    from pandas._libs.interval import Interval
+  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+
+[0m16:21:47.915830 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 14.82349, "process_user_time": 2.138989, "process_kernel_time": 0.515606, "process_mem_max_rss": "89636864", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:21:47.917696 [debug] [MainThread]: Command `dbt init` failed at 16:21:47.917152 after 14.83 seconds
+[0m16:21:47.918223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbff8aba580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfe9c12370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfe971c8b0>]}
+[0m16:21:47.918613 [debug] [MainThread]: Flushing usage events
+[0m16:26:30.882372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc1b14624c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc1a035ed30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc1a035e430>]}
+
+
+============================== 16:26:30.887477 | 79382197-7875-44b2-bc6e-2456627519e3 ==============================
+[0m16:26:30.887477 [info ] [MainThread]: Running with dbt=1.8.6
+[0m16:26:30.888012 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/lingshiyu/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init dbtlearn', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:26:30.899658 [info ] [MainThread]: A project called dbtlearn already exists here.
+[0m16:26:30.901970 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.10168, "process_user_time": 0.882277, "process_kernel_time": 0.363743, "process_mem_max_rss": "93442048", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:26:30.902644 [debug] [MainThread]: Command `dbt init` succeeded at 16:26:30.902424 after 0.10 seconds
+[0m16:26:30.902994 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc1b14624c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc1b2f93310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc1b2fd5f70>]}
+[0m16:26:30.903299 [debug] [MainThread]: Flushing usage events
+[0m16:27:35.084070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f19032520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f1a77ed60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f1a77e460>]}
+
+
+============================== 16:27:35.089187 | bd387274-7163-4991-a3aa-a19b0b540e24 ==============================
+[0m16:27:35.089187 [info ] [MainThread]: Running with dbt=1.8.6
+[0m16:27:35.089731 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': '/Users/lingshiyu/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init dbtlearn', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:27:35.103015 [debug] [MainThread]: Starter project path: /Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m16:27:35.108877 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:27:35.109256 [info ] [MainThread]: Setting up your profile.
+[0m16:35:29.336068 [info ] [MainThread]: Profile dbtlearn written to /Users/lingshiyu/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m16:35:29.407608 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 474.38422, "process_user_time": 2.616784, "process_kernel_time": 1.597443, "process_mem_max_rss": "151347200", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m16:35:29.417429 [debug] [MainThread]: Command `dbt init` succeeded at 16:35:29.416216 after 474.40 seconds
+[0m16:35:29.422357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8f19032520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ef8ff37f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ef8841910>]}
+[0m16:35:29.426035 [debug] [MainThread]: Flushing usage events
+[0m19:05:21.615273 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6109924c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6122752e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa612275be0>]}
+
+
+============================== 19:05:21.619760 | 9631d5e0-b83d-41a6-8814-c12eb86456cc ==============================
+[0m19:05:21.619760 [info ] [MainThread]: Running with dbt=1.8.6
+[0m19:05:21.620325 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': '/Users/lingshiyu/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init dbt_learn', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m19:05:21.632138 [debug] [MainThread]: Starter project path: /Users/lingshiyu/opt/anaconda3/lib/python3.9/site-packages/dbt/include/starter_project
+[0m19:05:21.640074 [info ] [MainThread]: 
+Your new dbt project "dbt_learn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:05:21.640460 [info ] [MainThread]: Setting up your profile.
+[0m19:08:53.781251 [info ] [MainThread]: Profile dbt_learn written to /Users/lingshiyu/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m19:08:53.813670 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 212.25957, "process_user_time": 2.185921, "process_kernel_time": 1.429566, "process_mem_max_rss": "169271296", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m19:08:53.817411 [debug] [MainThread]: Command `dbt init` succeeded at 19:08:53.816200 after 212.27 seconds
+[0m19:08:53.819633 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa6109924c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa620fcfee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa620fc38b0>]}
+[0m19:08:53.821481 [debug] [MainThread]: Flushing usage events

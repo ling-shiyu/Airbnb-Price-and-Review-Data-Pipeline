@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://c4949d82.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=9rkh9hIkVQFdAYIxREutcTudNxidNj24nolkU1l7smMLo6ON9-ByaNgN-TZ1qbJB
+    description: Executive Dashboard about Airbnb listings and hosts
+      
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: Shiyu Ling
+      email: sling012024@gmail.com

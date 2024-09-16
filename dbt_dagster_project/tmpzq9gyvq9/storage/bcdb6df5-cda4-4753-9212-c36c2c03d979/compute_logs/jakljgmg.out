@@ -1,0 +1,27 @@
+Running with dbt=1.7.18
+Registered adapter: snowflake=1.7.1
+Found 8 models, 1 snapshot, 1 analysis, 22 tests, 1 seed, 3 sources, 1 exposure, 0 metrics, 817 macros, 0 groups, 0 semantic models
+
+Concurrency: 1 threads (target='dev')
+
+1 of 5 START sql table model dev.dim_listings_w_hosts .......................... [RUN]
+1 of 5 OK created sql table model dev.dim_listings_w_hosts ..................... [[32mSUCCESS 1[0m in 2.39s]
+2 of 5 START test dbt_expectations_expect_column_max_to_be_between_dim_listings_w_hosts_price__5000  [RUN]
+2 of 5 WARN 1 dbt_expectations_expect_column_max_to_be_between_dim_listings_w_hosts_price__5000  [[33mWARN 1[0m in 1.48s]
+3 of 5 START test dbt_expectations_expect_column_quantile_values_to_be_between_dim_listings_w_hosts_price__500__50__0_99  [RUN]
+3 of 5 PASS dbt_expectations_expect_column_quantile_values_to_be_between_dim_listings_w_hosts_price__500__50__0_99  [[32mPASS[0m in 2.60s]
+4 of 5 START test dbt_expectations_expect_column_values_to_be_of_type_dim_listings_w_hosts_price__number  [RUN]
+4 of 5 PASS dbt_expectations_expect_column_values_to_be_of_type_dim_listings_w_hosts_price__number  [[32mPASS[0m in 1.35s]
+5 of 5 START test dbt_expectations_expect_table_row_count_to_equal_other_table_dim_listings_w_hosts_source_airbnb_listings_  [RUN]
+5 of 5 PASS dbt_expectations_expect_table_row_count_to_equal_other_table_dim_listings_w_hosts_source_airbnb_listings_  [[32mPASS[0m in 1.16s]
+
+Finished running 1 table model, 4 tests in 0 hours 0 minutes and 14.96 seconds (14.96s).
+
+[33mCompleted with 1 warning:[0m
+
+[33mWarning in test dbt_expectations_expect_column_max_to_be_between_dim_listings_w_hosts_price__5000 (models/schema.yml)[0m
+Got 1 result, configured to warn if != 0
+
+  compiled Code at target/dbtlearn_dbt_assets-bcdb6df-73121ac/compiled/dbtlearn/models/schema.yml/dbt_expectations_expect_column_c59e300e0dddb335c4211147100ac1c6.sql
+
+Done. PASS=4 WARN=1 ERROR=0 SKIP=0 TOTAL=5
