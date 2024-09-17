@@ -16,7 +16,8 @@ This project is a comprehensive data engineering pipeline focused on analyzing A
 
 
 # Data Flow Overview
-![dbt-dag](https://github.com/user-attachments/assets/be7b83bd-bfdf-499b-84f8-98baba1e4765)
+![dbt-dag (2)](https://github.com/user-attachments/assets/ff8d4e30-d473-4798-a61e-504df05d8d3c)
+
 
 
 
