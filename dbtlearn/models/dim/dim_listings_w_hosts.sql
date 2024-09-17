@@ -3,11 +3,11 @@ l AS (
     SELECT
         *
     FROM
-        {{ ref('dim_listings_cleansed') }}
+        {{ ref('int_listings_cleansed') }}
 ),
 h AS (
     SELECT * 
-    FROM {{ ref('dim_hosts_cleansed') }}
+    FROM {{ ref('int_hosts_cleansed') }}
 )
 
 SELECT 

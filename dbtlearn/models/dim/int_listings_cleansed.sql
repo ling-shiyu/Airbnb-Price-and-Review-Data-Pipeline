@@ -3,11 +3,11 @@
     materialized = 'view'
   )
 }}
-WITH src_listings AS (
+WITH stg_listings AS (
   SELECT
     *
   FROM
-    {{ ref('src_listings') }}
+    {{ ref('stg_listings') }}
 )
 SELECT
   listing_id,
@@ -28,4 +28,4 @@ SELECT
   created_at,
   updated_at
 FROM
-  src_listings
+  stg_listings

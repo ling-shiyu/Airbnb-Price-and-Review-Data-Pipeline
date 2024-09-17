@@ -1,7 +1,7 @@
 SELECT
     *
 FROM 
-    {{ ref('dim_listings_cleansed')}} l
+    {{ ref('int_listings_cleansed')}} l
 INNER JOIN
     {{ ref("fct_reviews") }} r
 USING 
