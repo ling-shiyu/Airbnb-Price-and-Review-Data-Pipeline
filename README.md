@@ -1,5 +1,5 @@
-# dbt-Snowflake Project 
-
+# Airbnb Listings and Reviews: Advanced Data Pipeline Development
+<img src="https://raw.githubusercontent.com/dbt-labs/dbt-core/fa1ea14ddfb1d5ae319d5141844910dd53ab2834/etc/dbt-core.svg" alt="dbt logo" width="100"/> <img src="https://github.com/user-attachments/assets/1c68bb54-ead2-4545-b91b-4cc9682ede29" alt="dbt logo" width="50"/>
 
 # Introduction
 This project is a comprehensive data engineering pipeline focused on analyzing Airbnb data to derive meaningful insights about listings, hosts, and user reviews. The primary objective is to build a robust and scalable data infrastructure that can ingest raw data, perform transformations, and facilitate advanced analytics and reporting.
@@ -19,34 +19,16 @@ This project is a comprehensive data engineering pipeline focused on analyzing A
 ![dbt-dag (2)](https://github.com/user-attachments/assets/ff8d4e30-d473-4798-a61e-504df05d8d3c)
 
 
-
-
-# Technologies and Techniques Applied
-<img src="https://raw.githubusercontent.com/dbt-labs/dbt-core/fa1ea14ddfb1d5ae319d5141844910dd53ab2834/etc/dbt-core.svg" alt="dbt logo" width="100"/> <img src="https://github.com/user-attachments/assets/1c68bb54-ead2-4545-b91b-4cc9682ede29" alt="dbt logo" width="50"/>
-
-
-- **Snowflake**: Utilized for its powerful cloud-based data warehousing capabilities, allowing for scalable storage and rapid querying.
-- **dbt**: Used for data transformation and modeling. dbt enables modular SQL development with Jinja templating, facilitating reusable and maintainable code.
-- **Dagster**: A data orchestrator that schedules and monitors the data pipelines, ensuring reliable and repeatable data workflows.
-- **Jinja**: A templating language integrated with dbt to create dynamic SQL queries and macros, enhancing code flexibility.
-- **SQL**: The primary language for querying, transforming, and testing data within the project.
-- **Python**: Used for scripting, setting up virtual environments, and integrating with tools like dbt and Dagster.
-- **Virtualenv**: Helps in creating isolated Python environments to manage project dependencies without conflicts.
-
-
 # Key Objectives Achieved
-- **Data Ingestion**: Successfully loaded raw Airbnb data into Snowflake from S3, setting up the foundational layer for analysis.
-- **Data Modeling**: Developed source, staging, and dimensional models in dbt to structure the data appropriately for analytical purposes.
-- **Incremental Loading**: Implemented incremental models in dbt to efficiently handle large datasets and updates over time.
-- **Data Quality Assurance**: Established a suite of tests (both generic and custom) to validate data correctness and consistency.
-- **Snapshots**: Created snapshots of key tables to track historical changes and support time-based analyses.
-- **Orchestration and Scheduling**: Configured Dagster to manage pipeline execution, enhancing automation and reliability.
-- **Documentation and Exposure**: Leveraged dbt's documentation features to create accessible project documentation and defined exposures for downstream dependencies like dashboards.
-- **Analytics and Reporting**: Generated analyses and visualizations to uncover insights, such as the impact of full moon dates on review sentiments.
+- **Project Setup and Data Management**: Configured Snowflake settings to optimize data retrieval and storage efficiency. Established multiple data warehouses to segregate developmental, testing, and production environments for better resource management and security. Customized user roles and permissions within Snowflake to ensure secure data access aligned with team roles and responsibilities. Implemented a rigorous audit trail to monitor data access and manipulation.
+- **Data Integration and Transformation**: Automated the extraction and loading of extensive Airbnb listing and review datasets from AWS S3 using Snowflake's data loading tools, ensuring high availability and consistency of data feeds. Utilized dbt to develop and maintain over 20 data models. Structured complex SQL queries and employed Jinja templating to handle dynamic data elements, facilitating scalable and efficient data transformations.
+- **Incremental Loading**: Designed and implemented incremental dbt models to process only new or updated data since the last load, reducing processing time and compute resources.
+- **Data Quality Assurance**:Crafted and executed detailed dbt test suites to validate data integrity, including uniqueness, referential integrity, and custom business rule validations to ensure the reliability of analytics outputs.
+- **Tools**: Advanced proficiency in SQL for complex data manipulation and analysis. Deepened expertise in Snowflake for cloud data warehousing solutions and dbt for data build tool functionalities.
 
 
 
-# Benefits of the Project
+# Achievements of the Project
 - **Scalability**: By using Snowflake and dbt, the project can handle large datasets and complex transformations with ease.
 - **Maintainability**: Modular code and templating reduce redundancy and make the project easier to maintain and extend.
 - **Data Integrity**: Comprehensive testing ensures that data remains accurate and reliable throughout the pipeline.
